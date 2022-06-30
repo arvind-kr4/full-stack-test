@@ -8,12 +8,12 @@ have a manager
 
 | <div style="width:290px">Employee Name</div> | <div style="width:80px">Id</div> | <div style="width:80px">Manager Id</div> |
 | -------------------- |:----:| ----------:|
-| Allan                | 100  | 150        |
-| Martin               | 220  | 100        |
-| Jamie                | 150  |            |
-| Alex                 | 275  | 100        |   
-| Steve                | 400  | 150        |
-| David                | 190  | 400        |
+| Allan  | 100  | 150 |
+| Martin  | 220  | 100 |
+| Jamie  | 150  |  |
+| Alex  | 275  | 100 |   
+| Steve  | 400  | 150 |
+| David  | 190  | 400 |
 
 
 Design a suitable representation of this data. Feel free to choose any database (RDBMS, inmemory database etc), file system or even a data structure like List or Map. Then creat a Maven project and write code using any Java style/framework (Spring Boot, Microprofile) that you are most comfortable with. The display should be an organisation hierarchy as below:
