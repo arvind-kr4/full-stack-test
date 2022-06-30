@@ -1,45 +1,81 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Skillfield Coding Challenge - Hierarchy Markup
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+# Problem
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+Below is employee data of a small company.
+It represents the hierarchical relationship among employees. CEO of the company doesn't
+have a manager
 
----
+| Employee Name        | Id   | Manager Id |
+| -------------------- |:----:| ----------:|
+| Allan                | 100  | 150        |
+| Martin               | 220  | 100        |
+| Jamie                | 150  |            |
+| Alex                 | 275  | 100        |   
+| Steve                | 400  | 150        |
+| David                | 190  | 400        |
 
-## Edit a file
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+Design a suitable representation of this data. Feel free to choose any database (RDBMS, inmemory database etc), file system or even a data structure like List or Map. Then creat a Maven project and write code using any Java style/framework (Spring Boot, Microprofile) that you are most comfortable with. The display should be an organisation hierarchy as below:
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+-------------------------------
+| Jamie    |        |         |
+|----------|:------:|---------|
+|          | Allan  |         |
+|          |        | Martin  |
+|          |        | Alex    |
+|          | Steve  |         |
+|          |        | David   |
 
----
+The result can be simply displayed on the console, or HTML page or even a file; whatever
+suits you. Try to cover all the possible scenarios, for example an employee with no manager, a
+manager who is not valid employee; etc.
+Pay more attention on writing the actual logic of representing the employee tabular data into
+the hierarchical format
 
-## Create a file
+# Solution
+Update the following sections to explain each aspect of your solution. 
 
-Next, you’ll add a new file to this repository.
+## Data Representation 
+UPDATE ME: Place here a sample of the data structure that you used to represent the input data.
+```
+Your data structure here
+```
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+### Traversal Algorithm
+UPDATE ME: Explain briefly the algorithim that you used to display the data in an hierarchical manner.
+```
+Paste your function/s here
+```
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+### Display/Front-end Framework
+UPDATE ME: Describe the approach that you used to display the results.
 
----
+## Test/Build/Running your Project
+If someone were to run your application locally, what are the steps that needs to be done (ex. mvn clean package, yarn start) to view the output
+```
+Step 1: mvn install
+Step 2: mvn clean package
+.
+.
+.
+```
 
-## Clone a repository
+# Taking the extra mile
+These are optional features but it should place you ahead of other candidates if implementated sucessfully
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+## REST API 
+Implement a REST endpoint to GET all employees in your table. This should return a JSON array 
+```
+{
+    results:[
+        {id:100,name:"Allan",manager_id:150},
+        {id:220,name:"Martin",manager_id:100},
+        .
+        .
+    ]
+}
+```
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+## Containerized Deployment (Docker) and Demo Link
+UPDATE ME: Containerize your application using Docker and publish it using any free cloud hosting environment of your choice (Netlify, Firebase, Azure, etc.) and add the link to this section.
