@@ -35,7 +35,7 @@ the hierarchical format
 # Solution
 Update the following sections to explain each aspect of your solution. 
 
-## Data Representation 
+### Data Representation 
 UPDATE ME: Place here a sample of the data structure that you used to represent the input data.
 ```
 Your data structure here
@@ -50,7 +50,7 @@ Paste your function/s here
 ### Display/Front-end Framework
 UPDATE ME: Describe the approach that you used to display the results.
 
-## Test/Build/Running your Project
+### Test/Build/Running your Project
 If someone were to run your application locally, what are the steps that needs to be done (ex. mvn clean package, yarn start) to view the output
 ```
 Step 1: mvn install
@@ -63,7 +63,7 @@ Step 2: mvn clean package
 # Taking the extra mile
 These are optional features but it should place you ahead of other candidates if implementated sucessfully
 
-## REST API 
+### REST API 
 Implement a REST endpoint to GET all employees in your table. This should return a JSON array 
 ```
 {
@@ -76,10 +76,10 @@ Implement a REST endpoint to GET all employees in your table. This should return
 }
 ```
 
-## Containerized Deployment (Docker) and Demo Link
+### Containerized Deployment (Docker) and Demo Link
 UPDATE ME: Containerize your application using Docker and publish it using any free cloud hosting environment of your choice (Netlify, Firebase, Azure, etc.) and add the link to this section.
 
-## Adding unit tests
+### Adding unit tests
 Add a testing library and include it as part of the build step. A single test case should be enough.
 
 # Criteria
