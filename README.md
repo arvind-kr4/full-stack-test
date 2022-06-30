@@ -6,7 +6,7 @@ Below is employee data of a small company.
 It represents the hierarchical relationship among employees. CEO of the company doesn't
 have a manager
 
-| Employee Name        | Id   | Manager Id |
+| <div style="width:290px">Employee Name</div> | <div style="width:80px">Id</div> | <div style="width:80px">Manager Id</div> |
 | -------------------- |:----:| ----------:|
 | Allan                | 100  | 150        |
 | Martin               | 220  | 100        |
@@ -79,3 +79,20 @@ Implement a REST endpoint to GET all employees in your table. This should return
 
 ## Containerized Deployment (Docker) and Demo Link
 UPDATE ME: Containerize your application using Docker and publish it using any free cloud hosting environment of your choice (Netlify, Firebase, Azure, etc.) and add the link to this section.
+
+## Adding unit tests
+Add a testing library and include it as part of the build step. A single test case should be enough.
+
+# Criteria
+Your work will be evaluated primarily on:
+
+1. Consistency of coding style.
+2. Proper error handling.
+3. Correct use of Java best practices, including interface/object definitions.
+4. Completeness and other value-adds (extra mile)
+5. General quality of code and technical communication.
+
+# How to submit your work
+1.  Fork this project on github.
+2.  Update this README.md with all the details about your solution and how to run the project.
+3.  When you're finished, send us the URL of your public GIT repository.
