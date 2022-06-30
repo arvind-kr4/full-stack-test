@@ -7,7 +7,7 @@ It represents the hierarchical relationship among employees. CEO of the company 
 have a manager
 
 | Employee Name        | Id   | Manager Id |
-| ---------------------|------|------------|
+| -------------------- | ---- | ---------- |
 | Allan                | 100  | 150        |
 | Martin               | 220  | 100        |
 | Jamie                | 150  |            |
@@ -18,7 +18,7 @@ have a manager
 Design a suitable representation of this data. Feel free to choose any database (RDBMS, inmemory database etc), file system or even a data structure like List or Map. Then creat a Maven project and write code using any Java style/framework (Spring Boot, Microprofile) that you are most comfortable with. The display should be an organisation hierarchy as below:
 
 | Jamie    |        |         |
-|----------|:------:|---------|
+|----------| ------ | ------- |
 |          | Allan  |         |
 |          |        | Martin  |
 |          |        | Alex    |
