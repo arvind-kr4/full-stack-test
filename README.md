@@ -6,21 +6,17 @@ Below is employee data of a small company.
 It represents the hierarchical relationship among employees. CEO of the company doesn't
 have a manager
 
-<div style="width:300px">
 | Employee Name        | Id   | Manager Id |
-| -------------------- |:----:| ----------:|
+| ---------------------|------|------------|
 | Allan                | 100  | 150        |
 | Martin               | 220  | 100        |
 | Jamie                | 150  |            |
 | Alex                 | 275  | 100        |   
 | Steve                | 400  | 150        |
 | David                | 190  | 400        |
-</div>
-
 
 Design a suitable representation of this data. Feel free to choose any database (RDBMS, inmemory database etc), file system or even a data structure like List or Map. Then creat a Maven project and write code using any Java style/framework (Spring Boot, Microprofile) that you are most comfortable with. The display should be an organisation hierarchy as below:
 
--------------------------------
 | Jamie    |        |         |
 |----------|:------:|---------|
 |          | Allan  |         |
@@ -28,6 +24,7 @@ Design a suitable representation of this data. Feel free to choose any database 
 |          |        | Alex    |
 |          | Steve  |         |
 |          |        | David   |
+
 
 The result can be simply displayed on the console, or HTML page or even a file; whatever
 suits you. Try to cover all the possible scenarios, for example an employee with no manager, a
