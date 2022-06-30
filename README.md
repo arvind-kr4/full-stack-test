@@ -92,6 +92,6 @@ Your work will be evaluated primarily on:
 5. General quality of code and technical communication.
 
 # How to submit your work
-1.  Fork this project on github.
+1.  Fork this project on bitbucket. You will need to create a free account if you don't have one (https://bitbucket.org/account/signup/).
 2.  Update this README.md with all the details about your solution and how to run the project.
 3.  When you're finished, send us the URL of your public GIT repository.
