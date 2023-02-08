@@ -15,7 +15,7 @@ have a manager
  David                | 190  | 400        
 
 Design a suitable representation of this data. Feel free to choose any database (RDBMS, inmemory database etc), file system or even a data structure like List or Map. 
-Then create a **Maven project** and write code using any **Java sframework (Spring Boot, Microprofile)** that you are most comfortable with. 
+Then create a project and write code using any programming language that you are most comfortable with. 
 The display should be an **organisation hierarchy** as below:
 
 | Jamie    |        |         |      |      |      |      |      |      |      |      |      |      |      |      |
