@@ -1,6 +1,11 @@
-import { EmployeeType } from "./../routers/hierarchy";
 import * as assert from "assert";
 import { Tree } from "./tree";
+
+type EmployeeType = {
+  name: string;
+  id: string;
+  manager_id: string | null;
+};
 
 function exampleTree(): Tree | undefined {
   const employeeData: EmployeeType[] = [
@@ -13,14 +18,11 @@ function exampleTree(): Tree | undefined {
   ];
 
   let tree: Tree | undefined;
-  for (let index = 0; index < employeeData.length; index++) {
-    const employee = employeeData[index];
-    if (employee) {
-      if (!tree) {
-        tree = new Tree(employee.id, employee.name);
-      } else {
-        tree.insert(employee.manager_id, employee.id, employee.name);
-      }
+  for (const employee of employeeData) {
+    if (!tree) {
+      tree = new Tree(employee.id, employee.name);
+    } else {
+      tree.insert(employee.manager_id, employee.id, employee.name);
     }
   }
   return tree;

@@ -1,47 +1,51 @@
+import { TRPCError } from "@trpc/server";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { Tree } from "../model/tree";
 
-export type EmployeeType = {
-  name: string;
-  id: string;
-  manager_id: string | null;
-};
-
-let newTree: Tree | null = null;
-
-const employeeData: EmployeeType[] = [
-  { name: "Jamie", id: "150", manager_id: null },
-  { name: "Allan", id: "100", manager_id: "150" },
-  { name: "Martin", id: "220", manager_id: "100" },
-  { name: "Alex", id: "275", manager_id: "100" },
-  { name: "Steve", id: "400", manager_id: "150" },
-  { name: "David", id: "190", manager_id: "400" },
-];
-
 export const hierarchyRouter = createTRPCRouter({
-  insert: publicProcedure.query(() => {
-    for (const employee of employeeData) {
-      if (!newTree) {
-        newTree = new Tree(employee.id, employee.name);
-      } else {
-        newTree.insert(employee.manager_id, employee.id, employee.name);
+  insert: publicProcedure.query(async ({ ctx }) => {
+    try {
+      let newTree: Tree | null = null;
+      const employeeData = await ctx.prisma.employee.findMany();
+      for (const employee of employeeData) {
+        if (!newTree) {
+          newTree = new Tree(employee.id, employee.name);
+        } else {
+          newTree.insert(employee.managerId, employee.id, employee.name);
+        }
       }
-    }
-    if (newTree) {
-      return {
-        success: true,
-        data: newTree.customPreOrderTraversal(),
-      };
-    } else {
-      return {
-        success: false,
-      };
+      if (newTree) {
+        return {
+          success: true,
+          data: newTree.customPreOrderTraversal(),
+        };
+      } else {
+        return {
+          success: false,
+        };
+      }
+    } catch (error) {
+      throw new TRPCError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "An unexpected error occurred, please try again later.",
+        // passing the original error to retain stack trace
+        cause: error,
+      });
     }
   }),
-  getAll: publicProcedure.query(() => {
-    return {
-      success: true,
-      results: employeeData,
-    };
+  getAll: publicProcedure.query(async ({ ctx }) => {
+    try {
+      return {
+        success: true,
+        results: await ctx.prisma.employee.findMany(),
+      };
+    } catch (error) {
+      throw new TRPCError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "An unexpected error occurred, please try again later.",
+        // passing the original error to retain stack trace
+        cause: error,
+      });
+    }
   }),
 });
